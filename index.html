@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacked</title>
+    <style>
+        /* Reset and basic styling */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* Hacker-style body with black background */
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: "Courier New", Courier, monospace;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Logo styling with vibrate effect */
+        #logo {
+            width: 220px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px #ff073a);
+            animation: vibrate 0.1s infinite alternate;
+        }
+
+        /* Glitch text styling with blink effect */
+        .glitch-text {
+            font-size: 3em;
+            position: relative;
+            text-align: center;
+            font-weight: bold;
+            animation: glitch 1.5s infinite, blink 1s infinite alternate, vibrate 0.1s infinite alternate;
+        }
+
+        .glitch-text::before, .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.8;
+            animation: glitch 1.5s infinite;
+        }
+
+        /* Color layers for glitch effect */
+        .glitch-text::before {
+            left: 2px;
+            color: #ff073a;
+            text-shadow: -2px 0 cyan;
+            clip: rect(0, 900px, 0, 0);
+        }
+
+        .glitch-text::after {
+            left: -2px;
+            color: cyan;
+            text-shadow: 2px 0 #ff073a;
+            clip: rect(0, 900px, 0, 0);
+        }
+
+        /* Glitch, vibrate, and blink animations */
+        @keyframes glitch {
+            0% { clip: rect(0, 900px, 0, 0); }
+            10% { clip: rect(10px, 900px, 80px, 0); }
+            20% { clip: rect(20px, 900px, 40px, 0); }
+            30% { clip: rect(30px, 900px, 60px, 0); }
+            40% { clip: rect(40px, 900px, 90px, 0); }
+            50% { clip: rect(50px, 900px, 100px, 0); }
+            60% { clip: rect(60px, 900px, 120px, 0); }
+            70% { clip: rect(70px, 900px, 140px, 0); }
+            80% { clip: rect(80px, 900px, 160px, 0); }
+            90% { clip: rect(90px, 900px, 180px, 0); }
+            100% { clip: rect(100px, 900px, 200px, 0); }
+        }
+
+        @keyframes vibrate {
+            0% { transform: translate(0); }
+            100% { transform: translate(1px, 1px); }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* Scrolling message */
+        #scrolling-text {
+            position: absolute;
+            bottom: 15px;
+            width: 100%;
+            color: #00aaff;
+            font-size: 1.3em;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: scroll 8s linear infinite;
+            text-align: center;
+            text-shadow: 
+                0 0 8px rgba(0, 170, 255, 0.8), 
+                0 0 16px rgba(0, 170, 255, 0.7),
+                0 0 32px rgba(0, 170, 255, 0.6);
+            font-weight: bold;
+        }
+
+        /* Scroll animation */
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo -->
+    <img src="https://i.postimg.cc/Bnx99bpD/logo.png" alt="GRAY Team Logo" id="logo">
+
+    <!-- Glitch text for message -->
+    <div class="glitch-text" data-text="HACKED BY" onclick="redirectToTelegram()">HACKED BY</div>
+
+    <!-- Team name with glitch effect -->
+    <div class="glitch-text" id="team-text" data-text="GRAY CYBER TEAM" onclick="redirectToTelegram()">GRAY CYBER TEAM</div>
+
+    <!-- Scrolling warning text -->
+    <div id="scrolling-text">⚠️Upgrade your security Warn⚠️</div>
+
+
+
+</body>
+
+
+</html>
